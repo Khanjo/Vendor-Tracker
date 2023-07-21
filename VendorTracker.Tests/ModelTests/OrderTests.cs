@@ -23,21 +23,21 @@ namespace VendorTracker.Tests
         [TestMethod]
         public void GetDetails_ReturnsDetails_String()
         {
-            string details = "40 croissants";
-            Order newOrder = new Order(details);
-            string result = newOrder.Details;
-            Assert.AreEqual(details, result);
+            string title = "40 croissants";
+            Order newOrder = new Order(title);
+            string result = newOrder.Title;
+            Assert.AreEqual(title, result);
         }
 
         [TestMethod]
         public void SetDetails_SetDetails_String()
         {
-            string details = "40 croissants";
-            Order newOrder = new Order(details);
-            string updatedDetails = "40 bread loaves";
-            newOrder.Details = updatedDetails;
-            string result = newOrder.Details;
-            Assert.AreEqual(updatedDetails, result);
+            string title = "40 croissants";
+            Order newOrder = new Order(title);
+            string updatedTitle = "40 bread loaves";
+            newOrder.Title = updatedTitle;
+            string result = newOrder.Title;
+            Assert.AreEqual(updatedTitle, result);
         }
 
         [TestMethod]
@@ -51,10 +51,10 @@ namespace VendorTracker.Tests
         [TestMethod]
         public void GetAll_ReturnsOrders_OrderList()
         {
-            string details01 = "40 croissants";
-            string details02 = "40 bread loaves";
-            Order newOrder1 = new Order(details01);
-            Order newOrder2 = new Order(details02);
+            string title01 = "40 croissants";
+            string title02 = "40 bread loaves";
+            Order newOrder1 = new Order(title01);
+            Order newOrder2 = new Order(title02);
             List<Order> newList = new List<Order> { newOrder1, newOrder2 };
             List<Order> result = Order.GetAll();
             CollectionAssert.AreEqual(newList, result);
@@ -63,8 +63,8 @@ namespace VendorTracker.Tests
         [TestMethod]
         public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
         {
-            string details = "40 croissants";
-            Order newOrder = new Order(details);
+            string title = "40 croissants";
+            Order newOrder = new Order(title);
             int result = newOrder.Id;
             Assert.AreEqual(1, result);
         }
@@ -72,10 +72,10 @@ namespace VendorTracker.Tests
         [TestMethod]
         public void Find_ReturnsCorrectOrder_Order()
         {
-            string details01 = "40 croissants";
-            string details02 = "40 bread loaves";
-            Order newOrder1 = new Order(details01);
-            Order newOrder2 = new Order(details02);
+            string title01 = "40 croissants";
+            string title02 = "40 bread loaves";
+            Order newOrder1 = new Order(title01);
+            Order newOrder2 = new Order(title02);
             Order result = Order.Find(2);
             Assert.AreEqual(newOrder2, result);
         }

@@ -4,13 +4,17 @@ namespace VendorTracker.Models
 {
     public class Order
     {
-        public string Details { get; set; }
+        public string Title { get; set; }
+        public int Price { get; set; }
+        public string Date { get; set; }
         public int Id { get; }
         private static List<Order> _instances = new List<Order> { };
 
-        public Order(string details)
+        public Order(string title, int price, string date)
         {
-            Details = details;
+            Title = title;
+            Price = price;
+            Date = date;
             _instances.Add(this);
             Id = _instances.Count;
         }
