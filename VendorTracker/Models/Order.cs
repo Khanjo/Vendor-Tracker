@@ -10,7 +10,11 @@ namespace VendorTracker.Models
 
         public Order(string details)
         {
-
+            Details = details;
+        }
+        public static List<Order> GetAll()
+        {
+            return _instances;
         }
         public static void ClearAll()
         {
