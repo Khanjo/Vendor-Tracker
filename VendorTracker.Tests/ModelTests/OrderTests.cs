@@ -59,5 +59,14 @@ namespace VendorTracker.Tests
             List<Order> result = Order.GetAll();
             CollectionAssert.AreEqual(newList, result);
         }
+
+        [TestMethod]
+        public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
+        {
+            string details = "40 croissants";
+            Order newOrder = new Order(details);
+            int result = newOrder.Id;
+            Assert.AreEqual(1, result);
+        }
     }
 }
