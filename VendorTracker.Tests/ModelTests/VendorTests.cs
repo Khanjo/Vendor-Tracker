@@ -65,7 +65,7 @@ namespace VendorTracker.Tests
         public void AddOrder_AssociatesOrderWithVendor_OrderList()
         {
             string detail = "40 croissants";
-            Order newOrder = new Order(detail);
+            Order newOrder = new Order(detail, 20, "01/01/2000");
             List<Order> newList = new List<Order> { newOrder };
             string name = "Test Vendor 1";
             Vendor newVendor = new Vendor(name, "cafe");

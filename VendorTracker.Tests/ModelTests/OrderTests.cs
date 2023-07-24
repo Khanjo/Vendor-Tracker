@@ -16,7 +16,7 @@ namespace VendorTracker.Tests
         [TestMethod]
         public void OrderConstructor_CreatesInstanceOfOrder_Order()
         {
-            Order newOrder = new Order("Test Order");
+            Order newOrder = new Order("Test Order", 20, "01/01/2000");
             Assert.AreEqual(typeof(Order), newOrder.GetType());
         }
 
@@ -24,7 +24,7 @@ namespace VendorTracker.Tests
         public void GetDetails_ReturnsDetails_String()
         {
             string title = "40 croissants";
-            Order newOrder = new Order(title);
+            Order newOrder = new Order(title, 20, "01/01/2000");
             string result = newOrder.Title;
             Assert.AreEqual(title, result);
         }
@@ -33,7 +33,7 @@ namespace VendorTracker.Tests
         public void SetDetails_SetDetails_String()
         {
             string title = "40 croissants";
-            Order newOrder = new Order(title);
+            Order newOrder = new Order(title, 20, "01/01/2000");
             string updatedTitle = "40 bread loaves";
             newOrder.Title = updatedTitle;
             string result = newOrder.Title;
@@ -53,8 +53,8 @@ namespace VendorTracker.Tests
         {
             string title01 = "40 croissants";
             string title02 = "40 bread loaves";
-            Order newOrder1 = new Order(title01);
-            Order newOrder2 = new Order(title02);
+            Order newOrder1 = new Order(title01, 20, "01/01/2000");
+            Order newOrder2 = new Order(title02, 20, "01/01/2000");
             List<Order> newList = new List<Order> { newOrder1, newOrder2 };
             List<Order> result = Order.GetAll();
             CollectionAssert.AreEqual(newList, result);
@@ -64,7 +64,7 @@ namespace VendorTracker.Tests
         public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
         {
             string title = "40 croissants";
-            Order newOrder = new Order(title);
+            Order newOrder = new Order(title, 20, "01/01/2000");
             int result = newOrder.Id;
             Assert.AreEqual(1, result);
         }
@@ -74,8 +74,8 @@ namespace VendorTracker.Tests
         {
             string title01 = "40 croissants";
             string title02 = "40 bread loaves";
-            Order newOrder1 = new Order(title01);
-            Order newOrder2 = new Order(title02);
+            Order newOrder1 = new Order(title01, 20, "01/01/2000");
+            Order newOrder2 = new Order(title02, 20, "01/01/2000");
             Order result = Order.Find(2);
             Assert.AreEqual(newOrder2, result);
         }
